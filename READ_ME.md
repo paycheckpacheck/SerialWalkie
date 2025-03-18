@@ -1,76 +1,63 @@
 # SerialWalkie
 
-This project is a collection of Python scripts and tools for working with serial communication. It includes various modules and utilities to help with configuring, reading, and writing data over a serial connection.
+SerialWalkie is a Python project that provides a collection of utility modules for enhancing serial communication in Python applications.
 
 ## Features
+- Modules for configuring and managing serial communication
+- Exception handling for serial communication errors
+- Logging capabilities for better debugging
+- Compatibility modules for improved portability
 
-- A set of Python modules for serial communication
-- Utilities for configuring serial ports
-- Reading and writing data using serial communication
-
-## Installation
-
-To install and run the SerialWalkie project, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/SerialWalkie.git
-   ```
-2. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Installation and Setup
+To install and run SerialWalkie, follow these steps:
+1. Clone the repository to your local machine
+2. Install the required dependencies
+3. Run the desired Python scripts
 
 ## Example Usage
-
-Here is an example of how you can use the SerialWalkie project:
-
 ```python
 import serial
+from SerialWalkie import config
 
-# Configure the serial port
-ser = serial.Serial(port='/dev/ttyUSB0', baudrate=9600)
+# Configure serial port
+config.setup_port(port='COM1', baudrate=9600, timeout=1)
 
 # Read data from the serial port
-data = ser.read(10)
+data = serial.read(10)
 print(data)
-
-# Write data to the serial port
-ser.write(b'Hello, World!')
-
-# Close the serial port
-ser.close()
 ```
 
 ## Code Highlights
-
-### main.py
-
-```python
-import ...
-# Add your code snippet here
-```
-
 ### config.py
-
 ```python
-# Add your code snippet here
+# Configuration module for serial communication
+# Handles setup and management of serial ports
 ```
 
-### writers.py
-
+### exceptions.py
 ```python
-# Add your code snippet here
+# Provides custom exceptions for serial communication errors
+# Ensures proper error handling and logging
+```
+
+### log.py
+```python
+# Logging module for debugging serial communication
+# Logs events and messages for troubleshooting
+```
+
+### compat.py
+```python
+# Compatibility module for improved cross-platform support
+# Contains functions for handling platform-specific differences
 ```
 
 ## Contribution Guidelines
-
-If you would like to contribute to the SerialWalkie project, please follow these guidelines:
+If you would like to contribute to SerialWalkie, please follow these guidelines:
 - Fork the repository
-- Create a new branch
-- Make your changes
-- Submit a pull request
+- Create a new branch for your feature or bug fix
+- Make your changes and test them thoroughly
+- Submit a pull request with a detailed description of your changes
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
